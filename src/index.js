@@ -5,10 +5,10 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { reducer } from './reducer'
+import { reducers } from './reducers'
 import './index.css'
 
-const store = createStore(reducer)
+const store = createStore(reducers)
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

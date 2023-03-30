@@ -5,11 +5,22 @@ const initialState = {
 }
 
 export const favReducer = (state = initialState, action) => {
+  const check = (id) => {
+    let check = true
+    state.favs.forEach((fav) => {
+      if (fav.id === id) {
+        check = false
+      }
+    })
+    return check
+  }
   switch (action.type) {
     case ADD_FAVORITE:
       return {
         ...state,
-        favs: [...state.favs, action.payload],
+        favs: check(action.payload.id)
+          ? [...state.favs, action.payload]
+          : state.favs,
       }
 
     case REMOVE_FAVORITE:

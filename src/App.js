@@ -52,11 +52,11 @@ function App() {
         <Route exact path="/">
           <Movie sira={sira} />
 
-          <div className="flex gap-3 justify-end py-3">
+          <div className="flex gap-3 justify-end py-3  flex-wrap">
             {sira > 0 && (
               <button
                 onClick={ilkFilm}
-                className="select-none px-4 py-2 border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500"
+                className=" flex-auto select-none px-4 py-2 border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500"
               >
                 Başa Dön
               </button>
@@ -65,7 +65,7 @@ function App() {
             {sira > 0 && (
               <button
                 onClick={oncekiFilm}
-                className="select-none px-4 py-2 border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500"
+                className="flex-auto select-none px-4 py-2 border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500"
               >
                 Önceki
               </button>
@@ -73,14 +73,14 @@ function App() {
             {sira !== length - 1 && (
               <button
                 onClick={sonrakiFilm}
-                className="select-none px-4 py-2 border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500"
+                className=" flex-auto select-none px-4 py-2 border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500"
               >
                 Sıradaki
               </button>
             )}
             <button
               onClick={favEkle}
-              className="select-none px-4 py-2 bg-blue-700 hover:bg-blue-600 text-white"
+              className="select-none px-4 py-2 bg-blue-700 hover:bg-blue-600 text-white flex-auto"
             >
               Listeme ekle
             </button>

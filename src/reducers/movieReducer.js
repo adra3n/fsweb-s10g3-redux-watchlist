@@ -1,5 +1,5 @@
 import { movies } from '../movies'
-import { NEXT_MOVIE } from '../actions/movieActions.js'
+import { NEXT_MOVIE, FIRST_MOVIE, PREV_MOVIE } from '../actions/movieActions.js'
 
 const initialState = {
   movies: movies,
@@ -17,6 +17,17 @@ export const movieReducer = (state = initialState, action) => {
       } else {
         return { ...state, sira: 0 }
       }
+
+    case PREV_MOVIE:
+      if (action.payload > 0) {
+        return {
+          ...state,
+          sira: action.payload - 1,
+        }
+      }
+
+    case FIRST_MOVIE:
+      return { ...state, sira: 0 }
 
     default:
       return state
